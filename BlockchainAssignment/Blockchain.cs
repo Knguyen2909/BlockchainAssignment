@@ -71,13 +71,22 @@ namespace BlockchainAssignment
             return rehash.Equals(b.hash);
         }
 
+        public List<Transaction> getPendingTransactions()
+        {
+            int n = Math.Min(maxBlock, TransactionPool.Count);
+            List<Transaction> pendingTransactions = TransactionPool.GetRange(0, n);
+
+            TransactionPool.RemoveRange(0, n);
+
+            return pendingTransactions;
+        }
 
 
         // Check the balance associated with a wallet based on the public key
         public double GetBalance(string address)
         {
             // Accumulator value
-            double balance = 0;
+            double balance = 100;
 
             // Loop through all approved transactions in order to assess account balance
             foreach (Block b in Blocks)

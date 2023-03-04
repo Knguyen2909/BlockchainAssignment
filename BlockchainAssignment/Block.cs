@@ -115,11 +115,9 @@ namespace BlockchainAssignment
                 + "\nIndex: " + index
                 + "\tTimestamp: " + timeStamp
                 + "\nPrevious Hash: " + prevHash
-                + "\n\t\t-- PoW --"
                 + "\nDifficulty Level: " + difficulty
                 + "\nNonce: " + nonce
                 + "\nHash: " + hash + " " + finalHash
-                + "\n\t\t-- Rewards --"
                 + "\nReward: " + reward
                 + "\nMiners Address: " + minerAddress
                 + "\n\t\t-- " + transactionList.Count + " Transactions --"
@@ -134,11 +132,9 @@ namespace BlockchainAssignment
                 + "\nIndex: " + index
                 + "\tTimestamp: " + timeStamp
                 + "\nPrevious Hash: " + prevHash
-                + "\n\t\t-- PoW --"
                 + "\nDifficulty Level: " + difficulty
                 + "\nNonce: " + nonce
                 + "\nHash: " + hash
-                + "\n\t\t-- Rewards --"
                 + "\nReward: " + reward
                 + "\nMiners Address: " + minerAddress
                 + "\n\t\t-- " + transactionList.Count + " Transactions --"

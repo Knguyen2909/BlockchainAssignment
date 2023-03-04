@@ -23,6 +23,8 @@ namespace BlockchainAssignment
         private float v;
         private float v5;
 
+        public static sbyte Count { get; internal set; }
+
         public Transaction(string text)
         {
 

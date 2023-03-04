@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -79,8 +80,11 @@ namespace BlockchainAssignment
 
         private void BlockGenBtn_Click(object sender, EventArgs e)
         {
+            List<Transaction> transactions = blockchain.getPendingTransactions();
             Block block = new Block(blockchain.GetLastBlock());
             blockchain.addToBlock(block);
+
+            richTextBox1.Text = blockchain.ToString();
         }
 
         private void PrintAllBtn_Click(object sender, EventArgs e)
