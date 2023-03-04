@@ -39,16 +39,14 @@ namespace BlockchainAssignment
         {
 
             Wallet.Wallet myNewWallet = new Wallet.Wallet(out string privKey);
-            String publicKey = myNewWallet.publicID;
-
-            outputToTextBox(privKeyTBox, privKey);
-            outputToTextBox(pubKeyTBox, publicKey) ;
+            publicKey.Text = myNewWallet.publicID;
+            privateKey.Text = privKey;
         }
 
         private void ValKeysBtn_Click(object sender, EventArgs e)
         {
             Color color; 
-           color =  Wallet.Wallet.ValidatePrivateKey(privKeyTBox.Text, pubKeyTBox.Text) ? Color.Green : Color.Red;
+           color =  Wallet.Wallet.ValidatePrivateKey(privateKey.Text, publicKey.Text) ? Color.Green : Color.Red;
             valKeysBtn.BackColor = color;
         }
 
@@ -58,8 +56,8 @@ namespace BlockchainAssignment
             bool testtrans = true;
             if (testtrans)
             {
-                if ((Wallet.Wallet.ValidatePrivateKey(privKeyTBox.Text, pubKeyTBox.Text)) && (blockchain.GetBalance(pubKeyTBox.Text) > Convert.ToSingle(amountTBox.Text))){
-                    Transaction transaction = new Transaction(pubKeyTBox.Text, privKeyTBox.Text, recieverKeyTBox.Text, Convert.ToSingle(amountTBox.Text), Convert.ToSingle(feeTBox.Text));
+                if ((Wallet.Wallet.ValidatePrivateKey(privateKey.Text, publicKey.Text)) && (blockchain.GetBalance(publicKey.Text) > Convert.ToSingle(amountTBox.Text))){
+                    Transaction transaction = new Transaction(publicKey.Text, privateKey.Text, recieverKeyTBox.Text, Convert.ToSingle(amountTBox.Text), Convert.ToSingle(feeTBox.Text));
                     blockchain.addTransactionPool(transaction);
                     outputToRichTextBox1(transaction.ReturnString());
                 }
@@ -70,7 +68,7 @@ namespace BlockchainAssignment
             }
             else
             {
-                Transaction transaction = new Transaction(pubKeyTBox.Text, privKeyTBox.Text, recieverKeyTBox.Text, Convert.ToSingle(amountTBox.Text), Convert.ToSingle(feeTBox.Text));
+                Transaction transaction = new Transaction(publicKey.Text, privateKey.Text, recieverKeyTBox.Text, Convert.ToSingle(amountTBox.Text), Convert.ToSingle(feeTBox.Text));
                 blockchain.addTransactionPool(transaction);
                 outputToRichTextBox1(transaction.ReturnString());
 
@@ -99,7 +97,7 @@ namespace BlockchainAssignment
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Block block = new Block(blockchain.GetLastBlock(), blockchain.retTPool(), pubKeyTBox.Text, comboBox1.SelectedIndex, addressFind.Text);
+            Block block = new Block(blockchain.GetLastBlock(), blockchain.retTPool(), publicKey.Text, comboBox1.SelectedIndex, addressFind.Text);
             blockchain.purgeTPool(block.transactionList);
             blockchain.addToBlock(block);
             Console.WriteLine("added new block to chain - with " + block.transactionList.Count + " transactions");
@@ -115,11 +113,11 @@ namespace BlockchainAssignment
 
         }
 
-        private void PubKeyTBox_TextChanged(object sender, EventArgs e)
+        private void publicKey_TextChanged(object sender, EventArgs e)
         {
             valKeysBtn.BackColor = Color.AntiqueWhite;
         }
-        private void PrivKeyTBox_TextChanged(object sender, EventArgs e)
+        private void privateKey_TextChanged(object sender, EventArgs e)
         {
             valKeysBtn.BackColor = Color.AntiqueWhite;
         }
@@ -174,7 +172,7 @@ namespace BlockchainAssignment
         // Check the balance of current user
         private void CheckBalance_Click(object sender, EventArgs e)
         {
-            outputToRichTextBox1(blockchain.GetBalance(pubKeyTBox.Text).ToString() + " Assignment Coin");
+            outputToRichTextBox1(blockchain.GetBalance(publicKey.Text).ToString() + " Assignment Coin");
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)

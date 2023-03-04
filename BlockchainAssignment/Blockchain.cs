@@ -86,7 +86,7 @@ namespace BlockchainAssignment
         public double GetBalance(string address)
         {
             // Accumulator value
-            double balance = 100;
+            double balance = 10000;
 
             // Loop through all approved transactions in order to assess account balance
             foreach (Block b in Blocks)

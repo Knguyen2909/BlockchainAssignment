@@ -26,8 +26,8 @@ namespace BlockchainAssignment
                                 
                            
         public string merkleRoot;                       
-        public string minerAddress;             
-        public double reward = 1.0;
+        public string minerAddress;
+        public double reward = 1.0; //fixed logic;
 
         public long nonce = 0;
         public int nonce0 = 0;
@@ -123,7 +123,7 @@ namespace BlockchainAssignment
                 + "\n\t\t-- " + transactionList.Count + " Transactions --"
                 + "\nMerkle Root: " + merkleRoot
                 + "\n" + string.Join("\n", transactionList)
-                + "\n\t\t[BLOCK END]");
+                + "\n\t\t[BLOCK END]");;
         }
 
         public string ReturnString()

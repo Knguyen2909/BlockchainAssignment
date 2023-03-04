@@ -35,10 +35,10 @@ namespace BlockchainAssignment
             this.infoLbl = new System.Windows.Forms.Label();
             this.genWalletBtn = new System.Windows.Forms.Button();
             this.valKeysBtn = new System.Windows.Forms.Button();
-            this.pubKeyTBox = new System.Windows.Forms.TextBox();
+            this.publicKey = new System.Windows.Forms.TextBox();
             this.pubKeyLbl = new System.Windows.Forms.Label();
             this.privKeyLbl = new System.Windows.Forms.Label();
-            this.privKeyTBox = new System.Windows.Forms.TextBox();
+            this.privateKey = new System.Windows.Forms.TextBox();
             this.createTransBtn = new System.Windows.Forms.Button();
             this.amountLbl = new System.Windows.Forms.Label();
             this.feeLbl = new System.Windows.Forms.Label();
@@ -113,13 +113,13 @@ namespace BlockchainAssignment
             this.valKeysBtn.UseVisualStyleBackColor = true;
             this.valKeysBtn.Click += new System.EventHandler(this.ValKeysBtn_Click);
             // 
-            // pubKeyTBox
+            // publicKey
             // 
-            this.pubKeyTBox.Location = new System.Drawing.Point(272, 356);
-            this.pubKeyTBox.Name = "pubKeyTBox";
-            this.pubKeyTBox.Size = new System.Drawing.Size(283, 20);
-            this.pubKeyTBox.TabIndex = 6;
-            this.pubKeyTBox.TextChanged += new System.EventHandler(this.PubKeyTBox_TextChanged);
+            this.publicKey.Location = new System.Drawing.Point(272, 356);
+            this.publicKey.Name = "publicKey";
+            this.publicKey.Size = new System.Drawing.Size(283, 20);
+            this.publicKey.TabIndex = 6;
+            this.publicKey.TextChanged += new System.EventHandler(this.publicKey_TextChanged);
             // 
             // pubKeyLbl
             // 
@@ -141,13 +141,13 @@ namespace BlockchainAssignment
             this.privKeyLbl.Text = "Private Key";
             this.privKeyLbl.Click += new System.EventHandler(this.privKeyLbl_Click);
             // 
-            // privKeyTBox
+            // privateKey
             // 
-            this.privKeyTBox.Location = new System.Drawing.Point(272, 395);
-            this.privKeyTBox.Name = "privKeyTBox";
-            this.privKeyTBox.Size = new System.Drawing.Size(283, 20);
-            this.privKeyTBox.TabIndex = 9;
-            this.privKeyTBox.TextChanged += new System.EventHandler(this.PrivKeyTBox_TextChanged);
+            this.privateKey.Location = new System.Drawing.Point(272, 395);
+            this.privateKey.Name = "privateKey";
+            this.privateKey.Size = new System.Drawing.Size(283, 20);
+            this.privateKey.TabIndex = 9;
+            this.privateKey.TextChanged += new System.EventHandler(this.privateKey_TextChanged);
             // 
             // createTransBtn
             // 
@@ -324,10 +324,10 @@ namespace BlockchainAssignment
             this.Controls.Add(this.feeLbl);
             this.Controls.Add(this.amountLbl);
             this.Controls.Add(this.createTransBtn);
-            this.Controls.Add(this.privKeyTBox);
+            this.Controls.Add(this.privateKey);
             this.Controls.Add(this.privKeyLbl);
             this.Controls.Add(this.pubKeyLbl);
-            this.Controls.Add(this.pubKeyTBox);
+            this.Controls.Add(this.publicKey);
             this.Controls.Add(this.valKeysBtn);
             this.Controls.Add(this.genWalletBtn);
             this.Controls.Add(this.infoLbl);
@@ -351,10 +351,10 @@ namespace BlockchainAssignment
         private System.Windows.Forms.Label infoLbl;
         private System.Windows.Forms.Button genWalletBtn;
         private System.Windows.Forms.Button valKeysBtn;
-        private System.Windows.Forms.TextBox pubKeyTBox;
+        private System.Windows.Forms.TextBox publicKey;
         private System.Windows.Forms.Label pubKeyLbl;
         private System.Windows.Forms.Label privKeyLbl;
-        private System.Windows.Forms.TextBox privKeyTBox;
+        private System.Windows.Forms.TextBox privateKey;
         private System.Windows.Forms.Button createTransBtn;
         private System.Windows.Forms.Label amountLbl;
         private System.Windows.Forms.Label feeLbl;
