@@ -106,14 +106,14 @@ namespace BlockchainAssignment
         }
 
         private void ReadPendTrandBtn_Click(object sender, EventArgs e)
-        {string s = "";
-            foreach (Transaction T in blockchain.retTPool()) {
-               s+= T +": \n "+T.ReturnString() + "\n \n ";
-            }
-            outputToRichTextBox1(s);
+        { 
+            UpdateText(String.Join("\n", blockchain.TransactionPool));
         }
 
+        private void UpdateText(string v)
+        {
 
+        }
 
         private void PubKeyTBox_TextChanged(object sender, EventArgs e)
         {
