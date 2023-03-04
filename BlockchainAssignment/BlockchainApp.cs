@@ -76,7 +76,7 @@ namespace BlockchainAssignment
 
         }
 
-        private void BlockGenBtn_Click(object sender, EventArgs e)
+        private void newBlock_Click(object sender, EventArgs e)
         {
             List<Transaction> transactions = blockchain.getPendingTransactions();
             Block block = new Block(blockchain.GetLastBlock());
@@ -144,9 +144,9 @@ namespace BlockchainAssignment
             if (blockchain.Blocks.Count == 1)
             {
                 if (!Blockchain.ValidateHash(blockchain.Blocks[0])) // Recompute Hash to check validity
-                    outputToRichTextBox1("Blockchain is invalid - Hash ");
+                    UpdateText("Blockchain is invalid - Hash ");
                 else
-                    outputToRichTextBox1("Blockchain is valid");
+                    UpdateText("Blockchain is valid");
                 return;
             }
 

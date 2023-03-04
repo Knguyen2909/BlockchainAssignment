@@ -46,7 +46,7 @@ namespace BlockchainAssignment
             this.amountTBox = new System.Windows.Forms.TextBox();
             this.feeTBox = new System.Windows.Forms.TextBox();
             this.recieverKeyTBox = new System.Windows.Forms.TextBox();
-            this.blockGenBtn = new System.Windows.Forms.Button();
+            this.newBlock = new System.Windows.Forms.Button();
             this.printAllBtn = new System.Windows.Forms.Button();
             this.readPendTrandBtn = new System.Windows.Forms.Button();
             this.adjustDiff = new System.Windows.Forms.Button();
@@ -207,15 +207,15 @@ namespace BlockchainAssignment
             this.recieverKeyTBox.Size = new System.Drawing.Size(389, 20);
             this.recieverKeyTBox.TabIndex = 16;
             // 
-            // blockGenBtn
+            // newBlock
             // 
-            this.blockGenBtn.Location = new System.Drawing.Point(8, 368);
-            this.blockGenBtn.Name = "blockGenBtn";
-            this.blockGenBtn.Size = new System.Drawing.Size(75, 55);
-            this.blockGenBtn.TabIndex = 17;
-            this.blockGenBtn.Text = "Generate New Block";
-            this.blockGenBtn.UseVisualStyleBackColor = true;
-            this.blockGenBtn.Click += new System.EventHandler(this.BlockGenBtn_Click);
+            this.newBlock.Location = new System.Drawing.Point(8, 368);
+            this.newBlock.Name = "newBlock";
+            this.newBlock.Size = new System.Drawing.Size(75, 55);
+            this.newBlock.TabIndex = 17;
+            this.newBlock.Text = "Generate New Block";
+            this.newBlock.UseVisualStyleBackColor = true;
+            this.newBlock.Click += new System.EventHandler(this.newBlock_Click);
             // 
             // printAllBtn
             // 
@@ -316,7 +316,7 @@ namespace BlockchainAssignment
             this.Controls.Add(this.adjustDiff);
             this.Controls.Add(this.readPendTrandBtn);
             this.Controls.Add(this.printAllBtn);
-            this.Controls.Add(this.blockGenBtn);
+            this.Controls.Add(this.newBlock);
             this.Controls.Add(this.recieverKeyTBox);
             this.Controls.Add(this.feeTBox);
             this.Controls.Add(this.amountTBox);
@@ -362,7 +362,7 @@ namespace BlockchainAssignment
         private System.Windows.Forms.TextBox amountTBox;
         private System.Windows.Forms.TextBox feeTBox;
         private System.Windows.Forms.TextBox recieverKeyTBox;
-        private System.Windows.Forms.Button blockGenBtn;
+        private System.Windows.Forms.Button newBlock;
         private System.Windows.Forms.Button printAllBtn;
         private System.Windows.Forms.Button readPendTrandBtn;
         private System.Windows.Forms.Button adjustDiff;
